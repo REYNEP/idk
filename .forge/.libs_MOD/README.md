@@ -1,17 +1,4 @@
-```py
-1. How Blender Does it --> 4/10
-    -1:- Libs & Include has to be Manually Updated.
-    +5:- Use Github to keep track of LIBS & Include Versions
-
-2. CMAKE FETCH --> 7/10
-    -1:- Download Progress is shown by taking up so many lines, like hundreds.
-    -2:- Can't Fetch SPECIFIC Folder/SubDirectory from a repo from GITHUB
-
-3. Python Script to Download --> 5/10
-4. GIT SubModule --> 4/10
-5. Maintaining a .zip in GDrive --> 2/10
-6. Just supplying all the external library binaries along with the project souurce --> 1/10
-```
+## CMake_Fetch will download into these 4 Folder here in this directory.
 
 ### My Approach to External Libraries:- `CMAKE_FETCH` + Blender's Approach
     1. CMAKE_FETCH most stuffs ----> like fmt
@@ -51,8 +38,3 @@
 
         |- .sandbox_libs_EXT = My SandBox for playing around with libraries 😵‍💫 [EMPTY FOR NOW]
 ```
-
-### Possible name changes of .build_n_libs_EXT:-
-    .rescources .hub .vault .forge .matrix .citadel .arc .realm 
-    .depot .junction .portal .gateway .conduit
-    .passage .doorway

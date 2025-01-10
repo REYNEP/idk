@@ -22,7 +22,7 @@
 #   TODO:
 #
 
-cmake_minimum_required(VERSION 3.20 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.25 FATAL_ERROR)
 
 project("project_idk" VERSION 0.0.1)
 
@@ -36,19 +36,27 @@ set(SRC
 )
   
 set(INC
-    ".builds_n_libs_EXT/.libs_MOD/include"
+    ".forge/.libs_MOD/include"
         # vulkan
         # vk-video
 )
 
-set(libs_MOD "${CMAKE_CURRENT_SOURCE_DIR}/.builds_n_libs_EXT/.libs_MOD")
+set(libs_MOD "${CMAKE_CURRENT_SOURCE_DIR}/.forge/.libs_MOD")
 set(LIB)
 
-# --------------------
-set(CMAKE_INSTALL_PREFIX ${FETCHCONTENT_BASE_DIR}/.install_CMAKE)
-include(.builds_n_libs_EXT/.CMakeFiles/REY_Fetch_libs_MOD.cmake)    # Input:- ${libs_MOD}
 
-# --------------------
+
+
+
+
+
+
+
+# ---fetch include----
+set(CMAKE_INSTALL_PREFIX ${FETCHCONTENT_BASE_DIR}/.install_CMAKE)
+include(.forge/.CMakeFiles/REY_Fetch_libs_MOD.cmake)    # Input:- ${libs_MOD}
+
+# ------options-------
 option(idk_BUILD_linux     ""     OFF)      # Mind the QUOTATION MARKS. Won't work without those
 option(idk_BUILD_osx       ""     OFF)      # ALSO, Remember to UNSET them from CACHE @ the end of this file.
 option(idk_BUILD_win32     ""      ON)
@@ -60,21 +68,32 @@ elseif(idk_BUILD_osx)
     list(APPEND LIB "${libs_MOD}/osx")
 elseif(idk_BUILD_win32)
     list(APPEND LIB "${libs_MOD}/win32")
-    include(.builds_n_libs_EXT/.CMakeFiles/REY_Fetch_libs_MOD_win32.cmake)    # Input:- ${libs_MOD}
+    include(.forge/.CMakeFiles/REY_Fetch_libs_MOD_win32.cmake)    # Input:- ${libs_MOD}
 endif()
 
-# --------------------
+# -------vulkan-------
 set(REY_FindVulkan_PATHS ${LIB})                                #  Input:- ${REY_FindVulkan_PATHS}
-include(.builds_n_libs_EXT/.CMakeFiles/REY_FindVulkan.cmake)    # Output:- ${amVK_EXT_Vulkan}
+include(.forge/.CMakeFiles/REY_FindVulkan.cmake)    # Output:- ${amVK_EXT_Vulkan}
+
+
+
+
+
 
 # --------------------
            add_executable (idk ${SRC})
 target_include_directories(idk PUBLIC ${INC})
 target_link_libraries     (idk ${amVK_EXT_Vulkan})
 
+
+
+
+
+
+
 # --------------------
-set(FETCHCONTENT_BASE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/.builds_n_libs_EXT/.libs_CMAKE_FETCH)
-include(.builds_n_libs_EXT/.CMakeFiles/REY_Fetch_fmk.cmake)     # Output:- fmt::fmt
+set(FETCHCONTENT_BASE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/.forge/.libs_CMAKE_FETCH)
+include(.forge/.CMakeFiles/REY_Fetch_fmk.cmake)     # Output:- fmt::fmt
 
 target_link_libraries(idk fmt::fmt)
 target_include_directories(idk PUBLIC fmt::fmt)
