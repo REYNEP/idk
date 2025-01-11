@@ -15,10 +15,10 @@
 
 ### My Approach to External Libraries:- `CMAKE_FETCH` + Blender's Approach
     1. CMAKE_FETCH most stuffs ----> like fmt
-    2. .libs_MOD = Libraries CUT/Stripped/Modified by REYNEP ----> like vulkan
+    2. .libs_REYMOD = Libraries CUT/Stripped/Modified by REYNEP ----> like vulkan
         Supplying these like Blender supplies their External Libraries
 
-    3. Even the stuff inside .libs_MOD would be fetches by CMAKE 😜
+    3. Even the stuff inside .libs_REYMOD would be fetches by CMAKE 😜
 
 ```py
 .repo
@@ -30,13 +30,13 @@
         |- .libs_CMAKE_FETCH = external libraries that need to be built PER_OS/PLATFORM
             |- fmt:- https://github.com/fmtlib/fmt
 
-        |- .libs_GIT = alternative to CMAKE_FETCH. i.e. Manually Building 😵‍💫 [EMPTY FOR NOW]
-        |- .libs_MOD = alternative to CMAKE_FETCH.
-            |- include = GIT_REPO
+        |- .libs_GIT    = alternative to CMAKE_FETCH. i.e. Manually Building 😵‍💫 [EMPTY FOR NOW]
+        |- .libs_REYMOD = alternative to CMAKE_FETCH.
+            |- include  = GIT_REPO
                 |- Vulkan-Headers
-            |- linux   = GIT_REPO
-            |- osX     = GIT_REPO
-            |- win32   = GIT_REPO
+            |- linux    = GIT_REPO
+            |- osX      = GIT_REPO
+            |- win32    = GIT_REPO
                 |- vulkan-1.lib
                 These 4 above are Separate GIT_REPOs that I plan on to maintain
                 These 4 above will be downloaded by CMAKE_FETCH during CONFIGURATION

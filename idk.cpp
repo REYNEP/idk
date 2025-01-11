@@ -1,6 +1,7 @@
-#include "logger.hh"
+#include "amGHOST/amGHOST_System.hh"
 
 int main(int argc, char** argv) {
-    fmt::print("Hello, world!\n");
+    //Update amVK_Logger using fmt
+    //Creating the Window
     return 0;
 }

@@ -56,7 +56,7 @@
       <td>3.</td>
     </tr>
     <tr>
-      <td>4.</td>
+      <td>4. SingleTon, amGHOST_System, Opening OS Window</td>
       <td>4.</td>
     </tr>
   </tbody>

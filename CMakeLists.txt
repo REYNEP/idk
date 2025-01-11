@@ -36,12 +36,12 @@ set(SRC
 )
   
 set(INC
-    ".forge/.libs_MOD/include"
+    ".forge/.libs_REYMOD/include"
         # vulkan
         # vk-video
 )
 
-set(libs_MOD "${CMAKE_CURRENT_SOURCE_DIR}/.forge/.libs_MOD")
+set(libs_REYMOD "${CMAKE_CURRENT_SOURCE_DIR}/.forge/.libs_REYMOD")
 set(LIB)
 
 
@@ -54,7 +54,7 @@ set(LIB)
 
 # ---fetch include----
 set(CMAKE_INSTALL_PREFIX ${FETCHCONTENT_BASE_DIR}/.install_CMAKE)
-include(.forge/.CMakeFiles/REY_Fetch_libs_MOD.cmake)    # Input:- ${libs_MOD}
+include(.forge/.CMakeFiles/REY_Fetch_libs_REYMOD.cmake)    # Input:- ${libs_REYMOD}
 
 # ------options-------
 option(idk_BUILD_linux     ""     OFF)      # Mind the QUOTATION MARKS. Won't work without those
@@ -63,12 +63,12 @@ option(idk_BUILD_win32     ""      ON)
 
 # --------------------
 if(idk_BUILD_linux)
-    list(APPEND LIB "${libs_MOD}/linux")
+    list(APPEND LIB "${libs_REYMOD}/linux")
 elseif(idk_BUILD_osx)
-    list(APPEND LIB "${libs_MOD}/osx")
+    list(APPEND LIB "${libs_REYMOD}/osx")
 elseif(idk_BUILD_win32)
-    list(APPEND LIB "${libs_MOD}/win32")
-    include(.forge/.CMakeFiles/REY_Fetch_libs_MOD_win32.cmake)    # Input:- ${libs_MOD}
+    list(APPEND LIB "${libs_REYMOD}/win32")
+    include(.forge/.CMakeFiles/REY_Fetch_libs_REYMOD_win32.cmake)    # Input:- ${libs_REYMOD}
 endif()
 
 # -------vulkan-------

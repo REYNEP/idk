@@ -1,0 +1,15 @@
+[submodule ".forge/.libs_REYMOD/win32"]
+	path = .forge/.libs_REYMOD/win32
+	url = https://github.com/REYNEP/libs-win32
+[submodule ".forge/.libs_REYMOD/linux"]
+	path = .forge/.libs_REYMOD/linux
+	url = https://github.com/REYNEP/libs-linux
+[submodule ".forge/.libs_REYMOD/macos"]
+	path = .forge/.libs_REYMOD/macos
+	url = https://github.com/REYNEP/libs-macos.git
+[submodule ".forge/.libs_REYMOD/include"]
+	path = .forge/.libs_REYMOD/include
+	url = https://github.com/REYNEP/libs-include
+[submodule "amGHOST/amVK_LoggerNUtils"]
+	path = amGHOST/amVK_LoggerNUtils
+	url = https://gist.github.com/REYNEP/14a628ab270cae461a926ba212226492
